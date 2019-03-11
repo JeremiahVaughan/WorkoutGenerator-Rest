@@ -1,9 +1,7 @@
 package com.madhax.workoutwidget.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Workout {
@@ -12,6 +10,11 @@ public class Workout {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @OneToMany
+    private List<Exercise> exercises;
+    @ManyToOne
+    @JoinColumn(name = "person_id")
+    private Person person;
 
     public Long getId() {
         return id;

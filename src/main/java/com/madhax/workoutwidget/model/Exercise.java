@@ -1,6 +1,8 @@
 package com.madhax.workoutwidget.model;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Exercise extends BaseEntity {
@@ -10,6 +12,12 @@ public class Exercise extends BaseEntity {
     private Integer weight;
     private Integer minutes;
     private Integer seconds;
+    @ManyToOne
+    @JoinColumn(name = "workout_id")
+    private Workout workout;
+    @ManyToOne
+    @JoinColumn(name = "person_id")
+    private Person person;
 
     public String getName() {
         return name;
