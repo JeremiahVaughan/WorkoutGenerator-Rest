@@ -1,28 +1,22 @@
 package com.madhax.workoutwidget.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Workout {
+public class Workout extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String name;
-    @OneToMany
-    private List<Exercise> exercises;
+    private LocalDate date;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Exercise> exercises = new ArrayList<>();
+
     @ManyToOne
     @JoinColumn(name = "person_id")
     private Person person;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -30,5 +24,29 @@ public class Workout {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public List<Exercise> getExercises() {
+        return exercises;
+    }
+
+    public void setExercises(List<Exercise> exercises) {
+        this.exercises = exercises;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 }

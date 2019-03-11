@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class ExerciseService {
 
-    private ExerciseRepository exerciseRepository;
+    private final ExerciseRepository exerciseRepository;
 
     public ExerciseService(ExerciseRepository exerciseRepository) {
         this.exerciseRepository = exerciseRepository;

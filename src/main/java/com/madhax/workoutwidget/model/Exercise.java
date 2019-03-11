@@ -1,20 +1,21 @@
 package com.madhax.workoutwidget.model;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Exercise extends BaseEntity {
 
     private String name;
-    private Integer reps;
-    private Integer weight;
-    private Integer minutes;
-    private Integer seconds;
+
     @ManyToOne
     @JoinColumn(name = "workout_id")
     private Workout workout;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<ExerciseResult> exerciseResults = new ArrayList<>();
+
     @ManyToOne
     @JoinColumn(name = "person_id")
     private Person person;
@@ -27,35 +28,27 @@ public class Exercise extends BaseEntity {
         this.name = name;
     }
 
-    public Integer getReps() {
-        return reps;
+    public Workout getWorkout() {
+        return workout;
     }
 
-    public void setReps(Integer reps) {
-        this.reps = reps;
+    public void setWorkout(Workout workout) {
+        this.workout = workout;
     }
 
-    public Integer getWeight() {
-        return weight;
+    public List<ExerciseResult> getExerciseResults() {
+        return exerciseResults;
     }
 
-    public void setWeight(Integer weight) {
-        this.weight = weight;
+    public void setExerciseResults(List<ExerciseResult> exerciseResults) {
+        this.exerciseResults = exerciseResults;
     }
 
-    public Integer getMinutes() {
-        return minutes;
+    public Person getPerson() {
+        return person;
     }
 
-    public void setMinutes(Integer minutes) {
-        this.minutes = minutes;
-    }
-
-    public Integer getSeconds() {
-        return seconds;
-    }
-
-    public void setSeconds(Integer seconds) {
-        this.seconds = seconds;
+    public void setPerson(Person person) {
+        this.person = person;
     }
 }

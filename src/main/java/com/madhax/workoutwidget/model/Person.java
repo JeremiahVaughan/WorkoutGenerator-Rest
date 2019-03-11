@@ -1,7 +1,9 @@
 package com.madhax.workoutwidget.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -11,11 +13,12 @@ public class Person extends BaseEntity {
     private String lastName;
     private Integer heightFeet;
     private Integer heightInches;
-    private List<BodyWeight> bodyWeightHistory;
-    @OneToMany
-    private List<Workout> workouts;
-    @OneToMany
-    private List<Exercise> exercises;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<BodyWeight> bodyWeightHistory = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Workout> workouts = new ArrayList<>();
 
     public String getFirstName() {
         return firstName;
@@ -65,11 +68,4 @@ public class Person extends BaseEntity {
         this.workouts = workouts;
     }
 
-    public List<Exercise> getExercises() {
-        return exercises;
-    }
-
-    public void setExercises(List<Exercise> exercises) {
-        this.exercises = exercises;
-    }
 }

@@ -10,6 +10,7 @@ public class BodyWeight extends BaseEntity {
 
     private Integer weight;
     private LocalDate date;
+
     @ManyToOne
     @JoinColumn(name = "person_id")
     private Person person;
