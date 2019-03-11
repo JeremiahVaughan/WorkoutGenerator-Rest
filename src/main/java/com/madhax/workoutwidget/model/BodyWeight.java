@@ -6,7 +6,7 @@ import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
 @Entity
-public class BodyWeight {
+public class BodyWeight extends BaseEntity {
 
     private Integer weight;
     private LocalDate date;
