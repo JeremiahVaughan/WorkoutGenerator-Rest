@@ -5,13 +5,19 @@ import com.madhax.workoutwidget.service.BodyWeightService;
 import com.madhax.workoutwidget.service.ExerciseService;
 import com.madhax.workoutwidget.service.PersonService;
 import com.madhax.workoutwidget.service.WorkoutService;
-import org.springframework.boot.CommandLineRunner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.time.LocalDate;
 
 @Component
-public class DataLoader implements CommandLineRunner {
+public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
+
+    private final Logger logger = LoggerFactory.getLogger(DataLoader.class);
 
     private final PersonService personService;
     private final BodyWeightService bodyWeightService;
@@ -26,7 +32,8 @@ public class DataLoader implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    @Transactional
+    public void onApplicationEvent(ContextRefreshedEvent event) {
         initData();
     }
 
@@ -39,15 +46,18 @@ public class DataLoader implements CommandLineRunner {
         BodyWeight bodyWeight = new BodyWeight();
         bodyWeight.setWeight(170);
         bodyWeight.setDate(LocalDate.now());
+        bodyWeight.setPerson(person);
 
         person.getBodyWeightHistory().add(bodyWeight);
 
         Workout workout1 = new Workout();
         workout1.setName("Workout 1");
         workout1.setDate(LocalDate.now());
+        workout1.setPerson(person);
 
         Exercise exercise1 = new Exercise();
         exercise1.setName("Dumbell Bench");
+        exercise1.setWorkout(workout1);
 
         ExerciseResult exerciseResult1 = new ExerciseResult();
         exerciseResult1.setSets(3);
@@ -57,6 +67,9 @@ public class DataLoader implements CommandLineRunner {
 
         workout1.getExercises().add(exercise1);
 
+        person.getWorkouts().add(workout1);
+
+        logger.debug("Bootstrap: saving person.");
         personService.save(person);
 
     }

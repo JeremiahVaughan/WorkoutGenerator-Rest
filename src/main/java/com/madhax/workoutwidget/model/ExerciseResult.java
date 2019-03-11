@@ -17,10 +17,6 @@ public class ExerciseResult extends BaseEntity {
     @JoinColumn(name = "exercise_id")
     private Exercise exercise;
 
-    @ManyToOne
-    @JoinColumn(name = "person_id")
-    private Person person;
-
     public Integer getReps() {
         return reps;
     }
@@ -67,13 +63,5 @@ public class ExerciseResult extends BaseEntity {
 
     public void setExercise(Exercise exercise) {
         this.exercise = exercise;
-    }
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
     }
 }
