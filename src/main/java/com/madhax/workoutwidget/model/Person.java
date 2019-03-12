@@ -14,10 +14,10 @@ public class Person extends BaseEntity {
     private Integer heightFeet;
     private Integer heightInches;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "person")
     private List<BodyWeight> bodyWeightHistory = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "person")
     private List<Workout> workouts = new ArrayList<>();
 
     public String getFirstName() {

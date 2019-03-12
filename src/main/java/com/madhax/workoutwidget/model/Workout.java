@@ -11,7 +11,7 @@ public class Workout extends BaseEntity {
     private String name;
     private LocalDate date;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "workout")
     private List<Exercise> exercises = new ArrayList<>();
 
     @ManyToOne

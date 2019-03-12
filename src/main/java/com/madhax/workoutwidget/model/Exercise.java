@@ -13,7 +13,7 @@ public class Exercise extends BaseEntity {
     @JoinColumn(name = "workout_id")
     private Workout workout;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "exercise")
     private List<ExerciseResult> exerciseResults = new ArrayList<>();
 
     @ManyToOne
