@@ -14,7 +14,7 @@ public class Exercise extends BaseEntity {
     private Workout workout;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "exercise")
-    private List<ExerciseResult> exerciseResults = new ArrayList<>();
+    private List<ExerciseDetails> exerciseDetails = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "person_id")
@@ -36,12 +36,12 @@ public class Exercise extends BaseEntity {
         this.workout = workout;
     }
 
-    public List<ExerciseResult> getExerciseResults() {
-        return exerciseResults;
+    public List<ExerciseDetails> getExerciseDetails() {
+        return exerciseDetails;
     }
 
-    public void setExerciseResults(List<ExerciseResult> exerciseResults) {
-        this.exerciseResults = exerciseResults;
+    public void setExerciseDetails(List<ExerciseDetails> exerciseDetails) {
+        this.exerciseDetails = exerciseDetails;
     }
 
     public Person getPerson() {

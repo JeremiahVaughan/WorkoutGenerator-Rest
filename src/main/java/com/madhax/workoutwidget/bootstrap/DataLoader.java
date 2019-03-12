@@ -59,11 +59,11 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
         exercise1.setName("Dumbell Bench");
         exercise1.setWorkout(workout1);
 
-        ExerciseResult exerciseResult1 = new ExerciseResult();
-        exerciseResult1.setSets(3);
-        exerciseResult1.setReps(10);
+        ExerciseDetails exerciseDetails1 = new ExerciseDetails();
+        exerciseDetails1.setSets(3);
+        exerciseDetails1.setReps(10);
 
-        exercise1.getExerciseResults().add(exerciseResult1);
+        exercise1.getExerciseDetails().add(exerciseDetails1);
 
         workout1.getExercises().add(exercise1);
 

@@ -5,13 +5,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class ExerciseResult extends BaseEntity {
+public class ExerciseDetails extends BaseEntity {
 
     private Integer reps;
     private Integer sets;
     private Integer weight;
     private Integer minutes;
     private Integer seconds;
+    private Double miles;
 
     @ManyToOne
     @JoinColumn(name = "exercise_id")
@@ -63,5 +64,13 @@ public class ExerciseResult extends BaseEntity {
 
     public void setExercise(Exercise exercise) {
         this.exercise = exercise;
+    }
+
+    public Double getMiles() {
+        return miles;
+    }
+
+    public void setMiles(Double miles) {
+        this.miles = miles;
     }
 }
