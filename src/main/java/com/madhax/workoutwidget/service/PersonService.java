@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class PersonService {
 
-    private final Logger logger = LoggerFactory.getLogger(PersonService.class);
+    private final Logger log = LoggerFactory.getLogger(PersonService.class);
 
     private final PersonRepository personRepository;
 
@@ -29,7 +29,7 @@ public class PersonService {
 
     public Person save(Person person) {
         Person savedPerson = personRepository.save(person);
-        logger.debug("Saving person with ID: {} name: {} {}", person.getId(), person.getFirstName(), person.getLastName());
+        log.debug("Saving person with ID: {} name: {} {}", person.getId(), person.getFirstName(), person.getLastName());
         return savedPerson;
     }
 
