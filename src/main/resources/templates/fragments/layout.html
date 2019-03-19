@@ -20,7 +20,7 @@
 
 <nav th:fragment="nav" class="navbar navbar-custom navbar-expand-md" role="navigation">
     <div class="navbar-brand">Workout
-        <img th:src="@{}" src="../../static/images/*.png" alt="" style="height: 60px"/>
+        <!--<img th:src="@{/images/bell.png}" src="../../static/images/bell.png" alt="" style="height: 60px"/>-->
         Widget
     </div>
     <div class="navbar-collapse collapse" id="navbarSupportedContent">
@@ -58,6 +58,10 @@
         </div>
     </footer>
 </div>
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 
 </body>
 
