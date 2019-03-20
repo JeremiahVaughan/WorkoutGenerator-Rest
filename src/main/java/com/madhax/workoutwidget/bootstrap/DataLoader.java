@@ -58,6 +58,7 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
         Exercise exercise1 = new Exercise();
         exercise1.setName("Dumbell Bench");
         exercise1.setWorkout(workout1);
+        exercise1.setPerson(person);
 
         ExerciseDetails exerciseDetails1 = new ExerciseDetails();
         exerciseDetails1.setSets(3);

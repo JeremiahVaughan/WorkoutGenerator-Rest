@@ -23,6 +23,10 @@ public class ExerciseService {
         return exerciseRepository.findById(id).orElse(null);
     }
 
+    public List<Exercise> getAllByPersonId(Long id) {
+        return exerciseRepository.findAllByPersonId(id);
+    }
+
     public Exercise save(Exercise exercise) {
         return exerciseRepository.save(exercise);
     }
