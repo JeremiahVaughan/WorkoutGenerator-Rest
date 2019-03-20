@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Workout Widget</title>
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="~{fragments/layout :: head}"/>
+
 <body>
-<h1>Workout Widget</h1>
+
+<nav th:insert="~{fragments/layout :: nav}"/>
+
+<div class="jumbotron umbotron-fluid">
+    <div class="container text-center">
+        <h1>Workout Widget</h1>
+    </div>
+</div>
+
+<footer th:insert="~{fragments/layout :: footer}"/>
 </body>
 </html>

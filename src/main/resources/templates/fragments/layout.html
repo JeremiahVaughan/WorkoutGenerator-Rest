@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../../static/css/style.css">
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.1.3/css/bootstrap.min.css}">
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <title>Workout Widget</title>
+
+</head>
+
+<body>
+
+<nav th:fragment="nav" class="navbar navbar-custom navbar-expand-md" role="navigation">
+    <div class="navbar-brand">Workout
+        <!--<img th:src="@{/images/bell.png}" src="../../static/images/bell.png" alt="" style="height: 60px"/>-->
+        Widget
+    </div>
+    <div class="navbar-collapse collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">Home<span class="fa fa-home" aria-hidden="true"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">Exercises<span class="fa fa-list"
+                                                                                aria-hidden="true"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">Workouts<span class="fa fa-heartbeat"
+                                                                  aria-hidden="true"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">Stats<span class="fa fa-bar-chart"
+                                                                           aria-hidden="true"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/logout}">Logout<span class="fa fa-sign-out" aria-hidden="true"></span></a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+
+<div th:fragment="footer" class="container">
+    <footer class="footer">
+        <div class="container text-center">
+            <a href="#" target="_blank"><i class="fa fa-github"></i></a>
+            |
+            <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+        </div>
+    </footer>
+</div>
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+</body>
+
+</html>

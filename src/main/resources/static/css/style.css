@@ -3,3 +3,51 @@ body {
     margin:0;
 }
 
+.navbar-custom {
+    background-color: #393f4d;
+}
+
+.jumbotron {
+    background-color: #d4d4dc;
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255, 255, 255, .8);
+}
+
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, .5);
+}
+
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: lightgrey;
+    /*color: white;*/
+    text-align: center;
+}
+
+.fa-github, .fa-linkedin {
+    color: #B11227;
+}
+
+.nav-item {
+    text-align: center;
+    padding: auto;
+    font-size: 17px;
+}
+
+.fa {
+    margin: 4px;
+}
