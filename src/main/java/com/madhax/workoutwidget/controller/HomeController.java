@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping({"", "/", "index", "index.html"})
 public class HomeController {
 
-    @RequestMapping({"", "/", "index", "index.html"})
+    @GetMapping
     public String showIndexPage() {
         return "index";
     }
