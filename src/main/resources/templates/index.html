@@ -15,14 +15,14 @@
 <!--/*@thymesVar id="firstName" type="com.madhax.workoutwidget.model.Person"*/-->
 <div class="container-fluid" style="margin-top: 20px;">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-6 offset-md-3">
             <div class="panel panel-primary">
 
                 <div class="panel-heading">
                     <h2 class="panel-title">Members</h2>
                 </div><!-- end panel-heading -->
-                <div class="table-responsive" th:if="${not people.isEmpty()}">
-                    <table class="table table-hover">
+                <div class="table-responsive" th:if="${not people.isEmpty()}" style="margin:0 auto;">
+                    <table class="table table-hover" style="margin:0 auto;">
                         <thead class="thead-inverse">
                         <tr>
                             <td>First Name</td>
