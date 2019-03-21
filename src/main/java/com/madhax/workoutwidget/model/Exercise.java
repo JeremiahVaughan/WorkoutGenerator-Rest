@@ -3,6 +3,7 @@ package com.madhax.workoutwidget.model;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Exercise extends BaseEntity {
@@ -19,6 +20,9 @@ public class Exercise extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "person_id")
     private Person person;
+
+    @ManyToMany(mappedBy = "exercises")
+    private Set<MuscleGroup> muscleGroups;
 
     public String getName() {
         return name;
