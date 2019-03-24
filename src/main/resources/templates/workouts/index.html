@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="~{fragments/layout :: head}"/>
+
+<body>
+
+<nav th:insert="~{fragments/layout :: nav}"/>
+
+<div class="jumbotron umbotron-fluid">
+    <div class="container text-center">
+        <h1>Workouts</h1>
+    </div>
+</div>
+<div class="container-fluid" style="margin-top: 20px;">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">
+                    <h2 class="panel-title">Totals</h2>
+                </div><!-- end panel-heading -->
+
+                <div class="table-responsive" th:if="${person.id > 0}">
+                    <table class="table table-hover">
+                        <thead class="thead-inverse">
+                        <tr>
+                            <td>Workouts</td>
+                            <td>Exercises</td>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td th:text="${person.getWorkouts().size()}">#</td>
+                            <td th:text="${exercises.size()}">#</td>
+                        </tr>
+                    </table>
+                </div><!-- end table-responsive -->
+
+            </div><!-- end panel-primary -->
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">
+                    <h2 class="panel-title">Workouts Per Month (avg)</h2>
+                </div><!-- end panel-heading -->
+
+                <div class="table-responsive" th:if="${person.id > 0}">
+                    <table class="table table-hover">
+                        <thead class="thead-inverse">
+                        <tr>
+                            <td>Workouts</td>
+                            <td>Exercises</td>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td th:text="${person.getWorkouts().size()}">#</td>
+                            <td th:text="${exercises.size()}">#</td>
+                        </tr>
+                    </table>
+                </div><!-- end table-responsive -->
+
+            </div><!-- end panel-primary -->
+        </div><!-- end col-md-6 -->
+    </div><!-- end row -->
+</div><!-- end container-fluid -->
+
+<footer th:insert="~{fragments/layout :: footer}"/>
+</body>
+</html>
